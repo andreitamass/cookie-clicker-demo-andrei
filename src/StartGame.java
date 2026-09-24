@@ -1,8 +1,7 @@
 package src;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Label;
+import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
@@ -18,15 +17,19 @@ public class StartGame extends JFrame {
         setTitle("Cookie Window");
         setSize(500, 500);
 
-        JPanel Panel = new JPanel();
+        JPanel panel = new JPanel();
 
         JButton cookieButton = new JButton("Click!");
 
-        Label lb = new Label();
+        JLabel lb = new JLabel("Cookies: ");
+        //Makes text horizontal
+        lb.setHorizontalAlignment(JLabel.CENTER);
 
-        Panel.add(cookieButton);
+        add(lb, BorderLayout.CENTER);
 
-        add(Panel, BorderLayout.SOUTH);
+        panel.add(cookieButton);
+
+        add(panel, BorderLayout.SOUTH);
 
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -34,7 +37,7 @@ public class StartGame extends JFrame {
         cookieButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cookies++;
-                System.out.println(cookies);
+                lb.setText("Cookies: " + cookies);
             }
         });
         
