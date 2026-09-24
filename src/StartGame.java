@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 
 public class StartGame extends JFrame {
 
+    int cookies = 0;
+
     //Constructor
     public StartGame() {
         setTitle("Cookie Window");
@@ -28,10 +30,11 @@ public class StartGame extends JFrame {
 
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        //When pressed add a cookie
         cookieButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
+                cookies++;
+                System.out.println(cookies);
             }
         });
         
