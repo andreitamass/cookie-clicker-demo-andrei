@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 public class StartGame extends JFrame {
 
     int cookies = 0;
+    int cookiesPerClick = 1;
+    int firstUpgradeCost = 50;
 
     //Constructor
     public StartGame() {
@@ -40,6 +42,8 @@ public class StartGame extends JFrame {
                 lb.setText("Cookies: " + cookies);
             }
         });
+
+        //Upgrade for cookies when above 50 = cookies +=2 instead of 1
         
     }
     
